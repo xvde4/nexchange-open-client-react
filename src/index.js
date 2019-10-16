@@ -16,6 +16,7 @@ import Home from 'Components/Home/Home';
 import Order from 'Components/Order/Order';
 import TermsConditions from 'Components/TermsConditions/TermsConditions';
 import Privacy from 'Components/Privacy/Privacy';
+import WhiteLabel from 'Components/WhiteLabel/WhiteLabel';
 
 import setAuthToken from 'Utils/setAuthToken';
 import crispEmailBinding from 'Utils/crispEmailBinding';
@@ -50,6 +51,7 @@ ReactDOM.render(
           <Route exact path="/order/:orderRef" component={Order} />
           <Route exact path="/" render={props => <Home {...props} store={store} />} /> />
           <Route exact path="/faqs/:id?" component={FAQ} />
+          <Route exact path="/whitelabel/" component={WhiteLabel} />
           <Route component={NotFound} />
         </Switch>
 
