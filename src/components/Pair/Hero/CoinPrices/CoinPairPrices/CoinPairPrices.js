@@ -13,12 +13,13 @@ function CoinPairPrices({ tradingSymbolPair }) {
 
   useEffect(() => {
     fetchPrice();
-  //   const timeout = setTimeout(() => { fetchPrice() },
-  //     config.PRICE_FETCH_INTERVAL);
 
-  //   return () => { clearTimeout(timeout) }
-  // }, []
-  })
+    const timeout = setTimeout(() => { fetchPrice() },
+      config.PRICE_FETCH_INTERVAL);
+
+    return () => { clearTimeout(timeout) }
+    }, []
+  )
 
   const fetchPrice = () => {
     const url = `${config.API_BASE_URL}/price/${tradingSymbolPair}/latest/`;
@@ -42,14 +43,14 @@ function CoinPairPrices({ tradingSymbolPair }) {
   };
 
   return (
-          <Link to={{ pathname: "/", search: `?pair=${tradingSymbolPair}` }} replace={false}>
-            <div className={`${styles['coin-price']} ${change}`}>
-              <h5>
-                {tradingSymbolPair} <span className={styles.arrow} />
-              </h5>
-              <h6>{rate ? rate.toFixed(5) : '...'}</h6>
-            </div>
-          </Link>
+    <Link to={{ pathname: "/", search: `?pair=${tradingSymbolPair}` }} replace={false}>
+      <div className={`${styles['coin-price']} ${change}`}>
+        <h5>
+          {tradingSymbolPair} <span className={styles.arrow} />
+        </h5>
+        <h6>{rate ? rate.toFixed(5) : '...'}</h6>
+      </div>
+    </Link>
   )
 }
 

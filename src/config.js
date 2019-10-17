@@ -11,7 +11,8 @@ const config = {
   PRICE_COMPARISON_INTERVAL: 60000,
   REFERRAL_CODE: null,
   KYC_DETAILS_FETCH_INTERVAL: 20000,
-  ADVANCED_MODE_ENABLED: true
+  ADVANCED_MODE_ENABLED: true,
+  POPULAR_COINS: ["BTC", "BCH", "ETH", "USD", "USDT", "EUR", "LTC", "XLM", "XRP"]
 };
 
 export default config;
